@@ -1,0 +1,14 @@
+{
+  "name": "buches-tools",
+  "owner": {
+    "name": "Mateus Cavalcanti"
+  },
+  "plugins": [
+    {
+      "name": "buches-author",
+      "source": "./",
+      "description": "Criação e extensão de livros guiados por provas no Obsidian."
+    }
+  ],
+  "description": "Skills de criação e extensão de livros para o Bücher no Obsidian."
+}

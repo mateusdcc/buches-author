@@ -1,0 +1,16 @@
+---
+name: extender-buch
+description: Compara um Buch existente com uma lista nova, prova, teste ou ementa, indica quais conceitos estudar e aprofunda as lacunas sem perder exercícios, soluções ou progresso. Use para extender, estender, ampliar ou auditar a cobertura de um livro do Bücher.
+---
+
+# Extender um Buch
+
+1. **Localize o livro e o alvo.** Identifique o vault e o Buch. Peça a lista, prova, teste, ementa ou enunciados se ainda faltarem. Pergunte pelo prazo, pelo nível e pelas técnicas exigidas apenas quando isso afetar a priorização. “Uma prova semana que vem” pede uma rota curta para o prazo e uma rota de aprofundamento depois. Se recebeu somente “o professor publicou uma lista”, não invente seus itens.
+2. **Compare item por item.** Leia a referência e o conteúdo real das notas; títulos parecidos não comprovam cobertura. Use [o método de cobertura](../criar-buch/references/coverage.md) para separar: coberto com prática, teoria presente mas prática insuficiente, pré-requisito faltante, tópico faltante e material ilegível ou indisponível. Distinga conteúdo coberto de desempenho do leitor. Progresso indica leitura ou exercícios marcados, não domínio confirmado.
+3. **Mostre o caminho de estudo.** Relacione cada lacuna com o subitem que a exige, as páginas já aproveitáveis e a primeira intervenção útil. Priorize pré-requisitos que desbloqueiam vários problemas. Se o pedido for apenas diagnóstico, pare aqui. Quando o pedido inclui ampliar o livro, use o diagnóstico para fazer as mudanças e reportar o que foi escrito.
+4. **Estenda no lugar certo.** Siga o [contrato de arquivos](../criar-buch/references/format.md). Reaproveite definições e resultados canônicos via wiki links. Complete uma página existente quando a lacuna pertence à mesma ideia; crie um subconceito quando pede uma cadeia própria de definições, resultados e exercícios. Para matemática, mantenha as convenções do livro e use [o modelo axiomático](../criar-buch/references/axiomatic-math.md) quando compatível. Acrescente prática guiada, prática sem roteiro e variantes que testam transferência. Deixe leituras opcionais posteriores ao caminho para a prova.
+5. **Audite a extensão.** Preserve caminhos e âncoras, enunciados, marcações em `_progress.md`, notas em `_solutions/` e embeds existentes. Adicione exercícios com âncoras novas e dicas antes da solução. Em livros legados, exercícios sem âncora podem ter chaves posicionais como `solution-3`; não insira novos pares antes deles sem conferir e preservar essas chaves. Confira links, pré-requisitos e ordem de leitura, incluindo os capítulos anteriores que foram afetados. Atualize a matriz de cobertura. Diga o que o leitor deve estudar antes da avaliação e quais itens estão prontos para prática sem consulta.
+
+Use [o exemplo de diagnóstico](references/diagnostic-example.md) como referência de precisão. Não conclua que o leitor já sabe resolver um item apenas porque o livro o contém.
+
+No Hermes, para abrir os guias compartilhados pelo leitor de skills, use `skill_view` com o nome `buches-author:criar-buch` e o `file_path` desejado, como `references/coverage.md`. Isso evita pedir ao leitor de arquivos de uma skill para sair da pasta dela.

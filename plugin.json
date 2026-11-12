@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "buches-author",
+  "version": "0.1.0",
+  "description": "Crie livros para o Bücher e amplie um livro existente a partir de listas, provas e outros materiais de referência."
+}

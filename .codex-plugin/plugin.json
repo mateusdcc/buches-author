@@ -1,0 +1,6 @@
+{
+  "name": "buches-author",
+  "version": "0.1.0",
+  "description": "Crie e amplie livros de estudo para o Bücher.",
+  "skills": "./skills/"
+}
