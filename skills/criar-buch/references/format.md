@@ -24,6 +24,20 @@ O Bücher lê o Markdown do vault. Para criar o Buch, não gere JavaScript, pág
 - Para novo conteúdo, use nomes de arquivo legíveis e caracteres compatíveis com o sistema de arquivos. Em um Buch existente, não renomeie capítulos apenas para mudar o título; altere `name` e o H1. Uma mudança estrutural de caminho exige atualizar todos os links e preservar as chaves de progresso.
 - `_progress.md` e `_solutions/` ficam junto ao índice e são administrados pelo plugin. Um documento de trabalho sobre cobertura pode ficar na raiz do Buch, com nome distinto; ele não faz parte do currículo.
 
+## Critérios de correção
+
+Inclua uma rubrica de exercícios no frontmatter do `_index.md`. Cada critério precisa de `id` único, `label`, `weight` numérico positivo e `criteria` com a descrição do que será avaliado. A nota de cada critério vai de 0 a 10. O Bücher calcula a média ponderada.
+
+```yaml
+grading:
+  - id: correctness
+    label: Correção
+    weight: 1
+    criteria: "Avalie se cada passo é válido e se a demonstração estabelece a conclusão. Dê 10 a uma prova completa e correta."
+```
+
+Use apenas correção se o leitor quiser avaliar validade matemática. Acrescente critérios como clareza ou simplicidade quando eles fizerem parte do objetivo de estudo. Especifique como tratar lapsos menores e lacunas que comprometem o argumento.
+
 ## Blocos e pré-requisitos
 
 Tipos indexados: `definition`, `theorem`, `lemma`, `proposition`, `corollary`, `example`, `exercise`. O título e corpo podem estar em qualquer idioma; os identificadores de tipo ficam em inglês. Escreva cada linha do corpo com `>`, inclusive linhas vazias internas. Após o callout, deixe uma linha vazia e coloque a âncora em uma linha própria, por exemplo `^criterio-subespaco`. Use IDs únicos na nota, com letras ASCII, dígitos e hífens. Preserve esses IDs em revisões.
