@@ -18,11 +18,11 @@ O Bücher lê o Markdown do vault. Para criar o Buch, não gere JavaScript, pág
             └── Transformações Lineares.md
 ```
 
-- O plugin reconhece pastas filhas diretas de `Buches/` que contêm `_index.md`. O índice recebe `title`, `description` (opcional) e `icon` (opcional, por exemplo `lucide:sigma`). O nome de exibição pode diferir da pasta. O app gera currículo, progresso, árvore e folha de exercícios.
+- O plugin reconhece pastas filhas diretas de `Buches/` que contêm `_index.md`. O índice recebe `title`, `description` (opcional) e `icon` (opcional, por exemplo `lucide:sigma`). Para livros de idiomas, aceite também `language` (ex.: `German`, `ja-JP`), `native_language` (opcional) e `mode: language`. O nome de exibição pode diferir da pasta. O app gera currículo, progresso, árvore, baralho de flashcards e folha de exercícios.
 - Cada conceito é um arquivo `.md` em `concepts/`. Para ter filhos, mantenha o arquivo do pai e uma pasta irmã com **o mesmo nome do arquivo sem `.md`**, inclusive acentos e espaços. A regra vale para qualquer profundidade. Não crie uma pasta pai sem a nota correspondente.
 - Em cada nota use `name` (título exibido), `description` (uma frase), `order` (número comparado entre irmãos), `category` (omitida no filho se herdada) e `depends_on` (lista YAML de pré-requisitos; use `[]` quando vazia). O leitor percorre pai, descendentes e próximo irmão. Atribua ordens distintas, com espaço para inserções. O primeiro H1 também é usado como título da página, então alinhe-o a `name`. Ícones `lucide:<nome>` são opcionais.
 - Para novo conteúdo, use nomes de arquivo legíveis e caracteres compatíveis com o sistema de arquivos. Em um Buch existente, não renomeie capítulos apenas para mudar o título; altere `name` e o H1. Uma mudança estrutural de caminho exige atualizar todos os links e preservar as chaves de progresso.
-- `_progress.md` e `_solutions/` ficam junto ao índice e são administrados pelo plugin. Um documento de trabalho sobre cobertura pode ficar na raiz do Buch, com nome distinto; ele não faz parte do currículo.
+- `_progress.md`, `_notes.md`, `_cards.md` e `_solutions/` ficam junto ao índice e não entram no currículo como capítulos. Um documento de trabalho sobre cobertura pode ficar na raiz do Buch, com nome distinto; ele não faz parte do currículo.
 
 ## Critérios de correção
 
@@ -40,9 +40,19 @@ Use apenas correção se o leitor quiser avaliar validade matemática. Acrescent
 
 ## Blocos e pré-requisitos
 
-Tipos indexados: `definition`, `theorem`, `lemma`, `proposition`, `corollary`, `example`, `exercise`. O título e corpo podem estar em qualquer idioma; os identificadores de tipo ficam em inglês. Escreva cada linha do corpo com `>`, inclusive linhas vazias internas. Após o callout, deixe uma linha vazia e coloque a âncora em uma linha própria, por exemplo `^criterio-subespaco`. Use IDs únicos na nota, com letras ASCII, dígitos e hífens. Preserve esses IDs em revisões.
+Tipos indexados: `definition`, `theorem`, `lemma`, `proposition`, `corollary`, `example`, `exercise`, além dos blocos voltados a idiomas `vocab`, `phrase`, `grammar`, `dialogue`, `usage`, `culture`, `conjugation`. O título e corpo podem estar em qualquer idioma; os identificadores de tipo ficam em inglês. Escreva cada linha do corpo com `>`, inclusive linhas vazias internas. Após o callout, deixe uma linha vazia e coloque a âncora em uma linha própria, por exemplo `^criterio-subespaco`. Use IDs únicos na nota, com letras ASCII, dígitos e hífens. Preserve esses IDs em revisões.
 
 Use `depends_on` para pré-requisitos do capítulo e `block_depends_on` para pré-requisitos de um bloco ou exercício. As chaves do mapa são IDs sem `^`; os destinos são wiki links entre aspas no YAML. No mesmo arquivo, use `"[[#^id]]"`; para outro arquivo, use o caminho completo no vault sem `.md`, por exemplo `"[[Buches/Álgebra Linear/concepts/Espaços Vetoriais/Subespaços#^criterio-subespaco]]"`. Para apontar à página, omita `#^id`. Declare dependência só quando o resultado for necessário. Um wiki link no corpo é uma referência comum e não cria aresta de pré-requisito.
+
+## Flashcards e clozes
+
+O Bücher coleta flashcards nos capítulos, em `_cards.md` e em `_notes.md`, compatíveis com a sintaxe do *Obsidian Spaced Repetition*, e grava o agendamento FSRS em `_progress.md` (`cards:`):
+
+- `frente :: verso`: cartão simples em uma linha.
+- `termo ::: tradução`: cartão reversível (gera frente → verso e verso → frente).
+- Bloco multilinha separado por linha isolada `?` (simples) ou `??` (reversível).
+- Cloze `==resposta;;dica==` (ou `==resposta==` dentro de `[!card]`, `[!vocab]`, `[!phrase]`, `#flashcards` ou `_cards.md`). No modo leitor, **Cloze quiz** transforma `==…==` em lacunas clicáveis.
+- Uma linha seguinte `Example: ...` é anexada como frase de contexto no cartão; embeds `![[audio.mp3]]` e `#tags` são preservados.
 
 ## Exercícios, dicas e soluções
 

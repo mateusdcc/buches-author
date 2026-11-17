@@ -4,10 +4,10 @@ Duas skills para [Bücher no Obsidian](https://github.com/mateusdcc/obsidian-buc
 
 | Skill | O que faz |
 | --- | --- |
-| [Criar Buch](skills/criar-buch/SKILL.md) | Pergunta pelo objetivo, nível e materiais de referência. Constrói um currículo, conceitos, subconceitos e exercícios de prova com dicas. |
-| [Extender Buch](skills/extender-buch/SKILL.md) | Compara uma lista ou prova com o conteúdo real de um Buch, indica o que estudar e, quando solicitado, escreve a teoria e os exercícios que faltam. |
+| [Criar Buch](skills/criar-buch/SKILL.md) | Pergunta pelo objetivo, nível e materiais de referência. Constrói um currículo, conceitos, subconceitos, flashcards e exercícios com dicas (inclusive para idiomas). |
+| [Extender Buch](skills/extender-buch/SKILL.md) | Compara uma lista ou prova com o conteúdo real de um Buch, indica o que estudar e, quando solicitado, escreve a teoria, os flashcards e os exercícios que faltam. |
 
-O [guia de formato](skills/criar-buch/references/format.md) descreve diretórios, frontmatter, âncoras, dependências e soluções. Os [templates](skills/criar-buch/assets/templates/) incluem índice, conceito, subconceito, exercício e um [capítulo completo de matemática axiomática](skills/criar-buch/assets/templates/mathematics-axiomatic.md). As duas skills compartilham esse guia; instale o pacote inteiro.
+O [guia de formato](skills/criar-buch/references/format.md) descreve diretórios, frontmatter, âncoras, dependências, flashcards (`::`, `:::`, `?`/`??`, clozes) e soluções. Para idiomas, o [guia de idiomas](skills/criar-buch/references/language-learning.md) detalha diálogos, vocabulário contextualizado e prática ativa. Os [templates](skills/criar-buch/assets/templates/) incluem índice, conceito, subconceito, exercício, [capítulo completo de matemática axiomática](skills/criar-buch/assets/templates/mathematics-axiomatic.md) e [capítulo completo de idioma](skills/criar-buch/assets/templates/language-chapter.md). As duas skills compartilham esses guias; instale o pacote inteiro.
 
 ## Hermes Agent
 
